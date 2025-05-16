@@ -17,22 +17,6 @@ const server = new McpServer({
 });
 
 server.tool(
-  "getComponentName",
-  "Prints the name of a Vibe component",
-  { component: z.string() },
-  async ({ component }) => {
-    return {
-      content: [
-        {
-          type: "text",
-          text: component,
-        },
-      ],
-    };
-  }
-);
-
-server.tool(
   "getVibeComponentMetadata",
   "Gets the props and types of a Vibe component",
   { componentName: z.string().optional().describe('Optional. The name of the component to get metadata for (e.g., Button, TextField). If omitted, returns metadata for all components.') },
